@@ -1,0 +1,45 @@
+/// 1
+
+
+import java.util.Scanner;
+
+public class Exercicio1 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o seu nome: ");
+        String nome = leia.nextLine();
+
+        System.out.println("Informe o seu cargo: ");
+        String cargo = leia.nextLine();
+
+        System.out.println("Bem-vindo ao Sistema Comercial, " + nome + ". Seu acesso como " + cargo + " foi configurado com sucesso.");
+
+        leia.close();
+    }
+}
+
+
+
+/// 2
+
+
+import java.util.Scanner;
+
+public class Exercicio2 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+        
+        System.out.println("Informe o preço de custo do produto: ");
+        Double valorCusto = leia.nextDouble();
+        
+        Double precoVenda = valorCusto * 1.25;
+        
+        System.out.println("O preço final de venda é: " + precoVenda);
+        
+        leia.close();
+    }
+}
+
+
+/// 3
