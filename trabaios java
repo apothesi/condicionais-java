@@ -19,8 +19,6 @@ public class Exercicio1 {
     }
 }
 
-
-
 /// 2
 
 
@@ -41,5 +39,84 @@ public class Exercicio2 {
     }
 }
 
-
 /// 3
+
+import java.util.Scanner;
+public class Exercicio3 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o preço unitário do produto: ");
+        Double precoUnitario = leia.nextDouble();
+
+        System.out.println("Informe a quantidade vendida: ");
+        int quantidade = leia.nextInt();
+
+        Double valorTotal = precoUnitario * quantidade;
+
+        System.out.println("O valor total a ser pago pelo cliente é: " + valorTotal);
+
+        leia.close();
+    }
+}
+
+/// 4
+import java.util.Scanner;
+public class Exercicio4 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o preço do produto em dólares: ");
+        Double precoDolar = leia.nextDouble();
+
+        System.out.println("Informe a cotação atual do real: ");
+        Double cotacao = leia.nextDouble();
+
+        Double precoReal = precoDolar * cotacao;
+
+        System.out.println("O valor equivalente em Reais é: R$ " + precoReal);
+
+        leia.close();
+    }
+}
+
+/// 5
+import java.util.Scanner;
+public class Exercicio5 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o salário fixo do vendedor: ");
+        Double salarioFixo = leia.nextDouble();
+
+        System.out.println("Informe o valor total vendido: ");
+        Double totalVendido = leia.nextDouble();
+
+        Double comissao = totalVendido * 0.05;
+        Double salarioFinal = salarioFixo + comissao;
+
+        System.out.println("O valor da comissão é: R$ " + comissao);
+        System.out.println("O salário final do mês é: R$ " + salarioFinal);
+
+        leia.close();
+    }
+}
+
+/// 6
+import java.util.Scanner;
+public class Exercicio6 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o valor original da compra: ");
+        Double valorOriginal = leia.nextDouble();
+
+        Double desconto = valorOriginal * 0.15;
+        Double valorFinal = valorOriginal - desconto;
+
+        System.out.println("O valor do desconto é: R$ " + desconto);
+        System.out.println("O valor final a pagar é: R$ " + valorFinal);
+
+        leia.close();
+    }
+}
