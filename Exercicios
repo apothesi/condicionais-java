@@ -1,60 +1,56 @@
 /// 1
-
-
 import java.util.Scanner;
-
 public class Exercicio1 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
 
-        System.out.println("Informe o seu nome: ");
-        String nome = leia.nextLine();
+        System.out.println("Informe um número inteiro: ");
+        int numero = leia.nextInt();
 
-        System.out.println("Informe o seu cargo: ");
-        String cargo = leia.nextLine();
+        String resultado = (numero % 2 == 0) ? "Par" : "Ímpar";
 
-        System.out.println("Bem-vindo ao Sistema Comercial, " + nome + ". Seu acesso como " + cargo + " foi configurado com sucesso.");
+        System.out.println("O número é: " + resultado);
 
         leia.close();
     }
 }
 
 /// 2
-
-
 import java.util.Scanner;
-
 public class Exercicio2 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
-        
-        System.out.println("Informe o preço de custo do produto: ");
-        Double valorCusto = leia.nextDouble();
-        
-        Double precoVenda = valorCusto * 1.25;
-        
-        System.out.println("O preço final de venda é: " + precoVenda);
-        
+
+        System.out.println("Informe o primeiro número: ");
+        int num1 = leia.nextInt();
+
+        System.out.println("Informe o segundo número: ");
+        int num2 = leia.nextInt();
+
+        int maior = (num1 > num2) ? num1 : num2;
+
+        System.out.println("O maior número é: " + maior);
+
         leia.close();
     }
 }
 
 /// 3
-
 import java.util.Scanner;
 public class Exercicio3 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
 
-        System.out.println("Informe o preço unitário do produto: ");
-        Double precoUnitario = leia.nextDouble();
+        System.out.println("Informe a média do aluno: ");
+        double media = leia.nextDouble();
 
-        System.out.println("Informe a quantidade vendida: ");
-        int quantidade = leia.nextInt();
-
-        Double valorTotal = precoUnitario * quantidade;
-
-        System.out.println("O valor total a ser pago pelo cliente é: " + valorTotal);
+        if (media >= 7) {
+            System.out.println("Aprovado");
+        } else if (media >= 5) {
+            System.out.println("Recuperação");
+        } else {
+            System.out.println("Reprovado");
+        }
 
         leia.close();
     }
@@ -66,15 +62,12 @@ public class Exercicio4 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
 
-        System.out.println("Informe o preço do produto em dólares: ");
-        Double precoDolar = leia.nextDouble();
+        System.out.println("Informe a temperatura em Celsius: ");
+        double temp = leia.nextDouble();
 
-        System.out.println("Informe a cotação atual do real: ");
-        Double cotacao = leia.nextDouble();
+        String classificacao = (temp < 15) ? "Frio" : (temp <= 25) ? "Agradável" : "Quente";
 
-        Double precoReal = precoDolar * cotacao;
-
-        System.out.println("O valor equivalente em Reais é: R$ " + precoReal);
+        System.out.println("Classificação: " + classificacao);
 
         leia.close();
     }
@@ -86,17 +79,30 @@ public class Exercicio5 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
 
-        System.out.println("Informe o salário fixo do vendedor: ");
-        Double salarioFixo = leia.nextDouble();
+        System.out.println("Informe o primeiro número: ");
+        double num1 = leia.nextDouble();
 
-        System.out.println("Informe o valor total vendido: ");
-        Double totalVendido = leia.nextDouble();
+        System.out.println("Informe o segundo número: ");
+        double num2 = leia.nextDouble();
 
-        Double comissao = totalVendido * 0.05;
-        Double salarioFinal = salarioFixo + comissao;
+        System.out.println("Informe o operador (+, -, *, /): ");
+        String operador = leia.next();
 
-        System.out.println("O valor da comissão é: R$ " + comissao);
-        System.out.println("O salário final do mês é: R$ " + salarioFinal);
+        if (operador.equals("+")) {
+            System.out.println("Resultado: " + (num1 + num2));
+        } else if (operador.equals("-")) {
+            System.out.println("Resultado: " + (num1 - num2));
+        } else if (operador.equals("*")) {
+            System.out.println("Resultado: " + (num1 * num2));
+        } else if (operador.equals("/")) {
+            if (num2 == 0) {
+                System.out.println("Erro: divisão por zero!");
+            } else {
+                System.out.println("Resultado: " + (num1 / num2));
+            }
+        } else {
+            System.out.println("Operador inválido!");
+        }
 
         leia.close();
     }
@@ -108,14 +114,460 @@ public class Exercicio6 {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
 
-        System.out.println("Informe o valor original da compra: ");
-        Double valorOriginal = leia.nextDouble();
+        System.out.println("Informe o ano: ");
+        int ano = leia.nextInt();
 
-        Double desconto = valorOriginal * 0.15;
-        Double valorFinal = valorOriginal - desconto;
+        if (ano % 400 == 0) {
+            System.out.println(ano + " é bissexto.");
+        } else if (ano % 100 == 0) {
+            System.out.println(ano + " não é bissexto.");
+        } else if (ano % 4 == 0) {
+            System.out.println(ano + " é bissexto.");
+        } else {
+            System.out.println(ano + " não é bissexto.");
+        }
 
-        System.out.println("O valor do desconto é: R$ " + desconto);
-        System.out.println("O valor final a pagar é: R$ " + valorFinal);
+        leia.close();
+    }
+}
+
+/// 7
+import java.util.Scanner;
+public class Exercicio7 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o lado A: ");
+        double a = leia.nextDouble();
+
+        System.out.println("Informe o lado B: ");
+        double b = leia.nextDouble();
+
+        System.out.println("Informe o lado C: ");
+        double c = leia.nextDouble();
+
+        if (a + b > c) {
+            if (a + c > b) {
+                if (b + c > a) {
+                    if (a == b) {
+                        if (b == c) {
+                            System.out.println("Triângulo Equilátero");
+                        } else {
+                            System.out.println("Triângulo Isósceles");
+                        }
+                    } else if (a == c) {
+                        System.out.println("Triângulo Isósceles");
+                    } else if (b == c) {
+                        System.out.println("Triângulo Isósceles");
+                    } else {
+                        System.out.println("Triângulo Escaleno");
+                    }
+                } else {
+                    System.out.println("Os lados não formam um triângulo válido.");
+                }
+            } else {
+                System.out.println("Os lados não formam um triângulo válido.");
+            }
+        } else {
+            System.out.println("Os lados não formam um triângulo válido.");
+        }
+
+        leia.close();
+    }
+}
+
+/// 8
+import java.util.Scanner;
+public class Exercicio8 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o peso (kg): ");
+        double peso = leia.nextDouble();
+
+        System.out.println("Informe a altura (m): ");
+        double altura = leia.nextDouble();
+
+        double imc = peso / (altura * altura);
+
+        System.out.println("Seu IMC é: " + imc);
+
+        if (imc < 18.5) {
+            System.out.println("Classificação: Abaixo do peso");
+        } else if (imc < 25) {
+            System.out.println("Classificação: Peso normal");
+        } else if (imc < 30) {
+            System.out.println("Classificação: Sobrepeso");
+        } else {
+            System.out.println("Classificação: Obesidade");
+        }
+
+        String faixa = (imc >= 18.5) ? "dentro" : "fora";
+        if (imc >= 25) {
+            faixa = "fora";
+        }
+        System.out.println("Você está " + faixa + " da faixa saudável.");
+
+        leia.close();
+    }
+}
+
+/// 9
+import java.util.Scanner;
+public class Exercicio9 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe um número de 1 a 7: ");
+        int dia = leia.nextInt();
+
+        if (dia == 1) {
+            System.out.println("Domingo");
+        } else if (dia == 2) {
+            System.out.println("Segunda-feira");
+        } else if (dia == 3) {
+            System.out.println("Terça-feira");
+        } else if (dia == 4) {
+            System.out.println("Quarta-feira");
+        } else if (dia == 5) {
+            System.out.println("Quinta-feira");
+        } else if (dia == 6) {
+            System.out.println("Sexta-feira");
+        } else if (dia == 7) {
+            System.out.println("Sábado");
+        } else {
+            System.out.println("Dia inválido");
+        }
+
+        leia.close();
+    }
+}
+
+/// 10
+import java.util.Scanner;
+public class Exercicio10 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe um número: ");
+        int numero = leia.nextInt();
+
+        String resultado = (numero > 0) ? "Positivo" : (numero < 0) ? "Negativo" : "Zero";
+
+        System.out.println("O número é: " + resultado);
+
+        leia.close();
+    }
+}
+
+/// 11
+import java.util.Scanner;
+public class Exercicio11 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe a idade: ");
+        int idade = leia.nextInt();
+
+        if (idade < 12) {
+            System.out.println("Valor do ingresso: R$ 10,00");
+        } else if (idade <= 60) {
+            System.out.println("Valor do ingresso: R$ 20,00");
+        } else {
+            System.out.println("Valor do ingresso: R$ 10,00 (meia)");
+        }
+
+        leia.close();
+    }
+}
+
+/// 12
+import java.util.Scanner;
+public class Exercicio12 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe a nota (0 a 10): ");
+        double nota = leia.nextDouble();
+
+        if (nota >= 9) {
+            System.out.println("Conceito: A");
+        } else if (nota >= 7) {
+            System.out.println("Conceito: B");
+        } else if (nota >= 5) {
+            System.out.println("Conceito: C");
+        } else {
+            System.out.println("Conceito: D");
+        }
+
+        leia.close();
+    }
+}
+
+/// 13
+import java.util.Scanner;
+public class Exercicio13 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o número do mês (1-12): ");
+        int mes = leia.nextInt();
+
+        if (mes == 12) {
+            System.out.println("Verão");
+        } else if (mes == 1) {
+            System.out.println("Verão");
+        } else if (mes == 2) {
+            System.out.println("Verão");
+        } else if (mes == 3) {
+            System.out.println("Outono");
+        } else if (mes == 4) {
+            System.out.println("Outono");
+        } else if (mes == 5) {
+            System.out.println("Outono");
+        } else if (mes == 6) {
+            System.out.println("Inverno");
+        } else if (mes == 7) {
+            System.out.println("Inverno");
+        } else if (mes == 8) {
+            System.out.println("Inverno");
+        } else if (mes == 9) {
+            System.out.println("Primavera");
+        } else if (mes == 10) {
+            System.out.println("Primavera");
+        } else if (mes == 11) {
+            System.out.println("Primavera");
+        } else {
+            System.out.println("Mês inválido");
+        }
+
+        leia.close();
+    }
+}
+
+/// 14
+import java.util.Scanner;
+public class Exercicio14 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o primeiro número: ");
+        int num1 = leia.nextInt();
+
+        System.out.println("Informe o segundo número: ");
+        int num2 = leia.nextInt();
+
+        System.out.println("Informe o terceiro número: ");
+        int num3 = leia.nextInt();
+
+        if (num1 == num2) {
+            if (num2 == num3) {
+                System.out.println("Os três números são iguais.");
+            } else if (num1 >= num3) {
+                System.out.println("O maior número é: " + num1);
+            } else {
+                System.out.println("O maior número é: " + num3);
+            }
+        } else if (num1 >= num2) {
+            if (num1 >= num3) {
+                System.out.println("O maior número é: " + num1);
+            } else {
+                System.out.println("O maior número é: " + num3);
+            }
+        } else if (num2 >= num3) {
+            System.out.println("O maior número é: " + num2);
+        } else {
+            System.out.println("O maior número é: " + num3);
+        }
+
+        leia.close();
+    }
+}
+
+/// 15
+import java.util.Scanner;
+public class Exercicio15 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        int usuarioFixo = 1;
+        int senhaFixa = 1234;
+
+        System.out.println("Informe o usuário (1): ");
+        int usuario = leia.nextInt();
+
+        System.out.println("Informe a senha: ");
+        int senha = leia.nextInt();
+
+        if (usuario == usuarioFixo) {
+            if (senha == senhaFixa) {
+                System.out.println("Acesso permitido");
+            } else {
+                System.out.println("Acesso negado");
+            }
+        } else {
+            System.out.println("Acesso negado");
+        }
+
+        leia.close();
+    }
+}
+
+/// 16
+import java.util.Scanner;
+public class Exercicio16 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe um número inteiro: ");
+        int numero = leia.nextInt();
+
+        if (numero % 3 == 0) {
+            if (numero % 5 == 0) {
+                System.out.println("É múltiplo de 3 e de 5.");
+            } else {
+                System.out.println("É múltiplo apenas de 3.");
+            }
+        } else if (numero % 5 == 0) {
+            System.out.println("É múltiplo apenas de 5.");
+        } else {
+            System.out.println("Não é múltiplo de 3 nem de 5.");
+        }
+
+        leia.close();
+    }
+}
+
+/// 17
+import java.util.Scanner;
+public class Exercicio17 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o valor da compra: ");
+        double valor = leia.nextDouble();
+
+        double valorFinal;
+
+        if (valor > 500) {
+            valorFinal = valor - (valor * 0.20);
+            System.out.println("Desconto de 20% aplicado.");
+        } else if (valor >= 200) {
+            valorFinal = valor - (valor * 0.10);
+            System.out.println("Desconto de 10% aplicado.");
+        } else {
+            valorFinal = valor;
+            System.out.println("Sem desconto.");
+        }
+
+        System.out.println("Valor final: R$ " + valorFinal);
+
+        leia.close();
+    }
+}
+
+/// 18
+import java.util.Scanner;
+public class Exercicio18 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe um número de 1 a 10: ");
+        int numero = leia.nextInt();
+
+        if (numero == 1) {
+            System.out.println("I");
+        } else if (numero == 2) {
+            System.out.println("II");
+        } else if (numero == 3) {
+            System.out.println("III");
+        } else if (numero == 4) {
+            System.out.println("IV");
+        } else if (numero == 5) {
+            System.out.println("V");
+        } else if (numero == 6) {
+            System.out.println("VI");
+        } else if (numero == 7) {
+            System.out.println("VII");
+        } else if (numero == 8) {
+            System.out.println("VIII");
+        } else if (numero == 9) {
+            System.out.println("IX");
+        } else if (numero == 10) {
+            System.out.println("X");
+        } else {
+            System.out.println("Número fora do intervalo.");
+        }
+
+        leia.close();
+    }
+}
+
+/// 19
+import java.util.Scanner;
+public class Exercicio19 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe a velocidade do veículo: ");
+        double velocidade = leia.nextDouble();
+
+        System.out.println("Informe o limite da via: ");
+        double limite = leia.nextDouble();
+
+        double percentual = ((velocidade - limite) / limite) * 100;
+
+        if (velocidade <= limite) {
+            System.out.println("Sem multa");
+        } else if (percentual <= 20) {
+            System.out.println("Multa leve");
+        } else if (percentual <= 50) {
+            System.out.println("Multa grave");
+        } else {
+            System.out.println("Multa gravíssima + suspensão");
+        }
+
+        leia.close();
+    }
+}
+
+/// 20
+import java.util.Scanner;
+public class Exercicio20 {
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Jogador 1 - 1=Pedra  2=Papel  3=Tesoura: ");
+        int jogador1 = leia.nextInt();
+
+        System.out.println("Jogador 2 - 1=Pedra  2=Papel  3=Tesoura: ");
+        int jogador2 = leia.nextInt();
+
+        String resultado;
+
+        if (jogador1 == jogador2) {
+            resultado = "Empate";
+        } else if (jogador1 == 1) {
+            if (jogador2 == 3) {
+                resultado = "Jogador 1 venceu";
+            } else {
+                resultado = "Jogador 2 venceu";
+            }
+        } else if (jogador1 == 2) {
+            if (jogador2 == 1) {
+                resultado = "Jogador 1 venceu";
+            } else {
+                resultado = "Jogador 2 venceu";
+            }
+        } else {
+            if (jogador2 == 2) {
+                resultado = "Jogador 1 venceu";
+            } else {
+                resultado = "Jogador 2 venceu";
+            }
+        }
+
+        System.out.println(resultado);
 
         leia.close();
     }
